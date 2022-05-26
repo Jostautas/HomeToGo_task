@@ -1,6 +1,24 @@
 {% extends('base.html.twig') %}
 
 {% block body %}
-    <h2>Junior task for HomeToGo {{n}}</h2>
+    <h2>Junior task for HomeToGo</h2>
     <h3>Jostautas Sakas</h3>
+
+    <table border="3">
+    {% for row in range(0, (n-1)) %}
+    <tr>
+        {% for cell in range(0, (n-1)) %}
+            {% set nr = row * n + cell %}
+            <td>{{table[nr]}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </table>
+    <p>Enter the coordinates of where you what to place your next move (eg. 0 and 0; 1 and 1; 2 and 0) and press enter</p>
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Enter" class="btn btn-success"/>
+        {{ form_end(form) }}
+    </div>
 {% endblock %}

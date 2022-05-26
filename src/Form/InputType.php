@@ -11,7 +11,8 @@ class InputType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('field_name')
+            ->add('xInput')
+            ->add('yInput')
         ;
     }
 
